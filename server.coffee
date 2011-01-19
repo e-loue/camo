@@ -111,7 +111,7 @@ server = Http.createServer (req, resp) ->
 
               switch srcResp.statusCode
                 when 200
-                  if newHeaders['content-type'] && newHeaders['content-type'].slice(0, 5) != 'image'
+                  if newHeaders['content-type'] && newHeaders['content-type'][0..4] != 'image'
                     four_oh_four(resp, "Non-Image content-type returned")
 
                   log newHeaders

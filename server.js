@@ -111,7 +111,6 @@
                     return srcResp.on('data', function(chunk) {
                       return resp.write(chunk);
                     });
-                    break;
                   case 304:
                     return resp.writeHead(srcResp.statusCode, newHeaders);
                   default:
